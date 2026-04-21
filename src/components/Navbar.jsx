@@ -34,7 +34,7 @@ export default function Navbar() {
         >
           {/* Logo */}
           <a href="#home" className="navbar-logo">
-            <img src="/logo.png" alt="Right Choice Cleaning" className="navbar-logo-img" />
+            <img src="./logo.png" alt="Right Choice Cleaning" className="navbar-logo-img" />
           </a>
 
           {/* Desktop Nav Links */}
@@ -76,7 +76,7 @@ export default function Navbar() {
             transition={{ type: 'spring', damping: 28, stiffness: 220 }}
           >
             <div className="mobile-menu-header">
-              <img src="/logo.png" alt="Right Choice Cleaning" className="mobile-logo-img" />
+              <img src="./logo.png" alt="Right Choice Cleaning" className="mobile-logo-img" />
               <button className="mobile-close" onClick={() => setMenuOpen(false)}>
                 <i className="fa-solid fa-xmark"></i>
               </button>

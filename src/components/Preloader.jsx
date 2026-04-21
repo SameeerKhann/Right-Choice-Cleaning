@@ -55,7 +55,7 @@ export default function Preloader({ setLoading }) {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <img src="/logo.png" alt="Right Choice Cleaning" />
+        <img src="./logo.png" alt="Right Choice Cleaning" />
       </motion.div>
 
       {/* Cleaning track */}

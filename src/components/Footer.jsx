@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <img src="/logo.png" alt="Right Choice Cleaning" className="footer-logo-img" />
+              <img src="./logo.png" alt="Right Choice Cleaning" className="footer-logo-img" />
             </div>
             <p className="footer-tagline">
               Professional, reliable cleaning services for homes and offices in Calgary, AB.
