@@ -1,0 +1,140 @@
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 60px; /* Offset for navbar */
+  /* Beautiful minimalist room background */
+  background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.login-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-forms-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.auth-card {
+  text-align: center;
+}
+
+.auth-title {
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: var(--navy);
+  opacity: 0.5;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 15px 14px 45px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--off-white);
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(220, 168, 62, 0.1);
+}
+
+.input-group input:focus + .input-icon {
+  opacity: 1;
+  color: var(--gold);
+}
+
+.auth-btn {
+  background: var(--navy);
+  color: var(--gold);
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.auth-links {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.auth-links a {
+  color: var(--gold);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+  color: var(--navy);
+}
+
+.auth-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+  position: relative;
+}
+
+@media (max-width: 576px) {
+  .login-forms-wrapper {
+    padding: 30px 20px;
+  }
+}

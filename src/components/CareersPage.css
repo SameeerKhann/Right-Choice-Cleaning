@@ -1,0 +1,233 @@
+/* Careers Page Styles */
+
+.careers-page {
+  padding-top: 80px; /* Offset for navbar */
+  min-height: 100vh;
+  background-color: var(--off-white);
+}
+
+.careers-header {
+  position: relative;
+  padding: 80px 0 100px;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.careers-header .section-title {
+  font-size: 3.5rem;
+}
+
+.careers-header .gold-line {
+  margin: 20px auto 30px;
+}
+
+.careers-header .section-sub {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Employee Testimonials */
+.employee-testimonials {
+  padding: 100px 0;
+  background-color: var(--off-white);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.employee-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 4px solid var(--gold);
+}
+
+.employee-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.quote-icon {
+  font-size: 2.5rem;
+  color: rgba(220, 168, 62, 0.2); /* Faded gold */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.employee-card p {
+  color: var(--text-color);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.employee-name {
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+}
+
+/* Application Info */
+.application-info {
+  position: relative;
+  padding: 100px 0;
+  color: var(--white);
+}
+
+.app-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.app-info-text h2 {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  margin-bottom: 10px;
+}
+
+.app-info-text h2 span {
+  color: var(--gold);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 30px;
+}
+
+.core-values {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.core-values li {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.core-values li i {
+  color: var(--gold);
+  margin-top: 5px;
+}
+
+.offer-title {
+  color: var(--gold);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: var(--font-heading);
+}
+
+.offer-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.offer-list li {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  color: rgba(255,255,255,0.8);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.outro-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+/* Placeholder for GHL Form */
+.app-form-container {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ghl-placeholder {
+  text-align: center;
+  color: var(--navy);
+  padding: 30px;
+  border: 2px dashed rgba(16, 24, 47, 0.2);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.ghl-placeholder h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.ghl-placeholder p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .app-info-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .careers-header .section-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-header {
+    padding: 60px 0 80px;
+  }
+
+  .careers-header .section-title {
+    font-size: 2.2rem;
+  }
+
+  .app-info-text h2 {
+    font-size: 2rem;
+  }
+
+  .app-form-container {
+    padding: 20px;
+    min-height: 400px;
+  }
+}

@@ -135,7 +135,7 @@ export default function ContactSection() {
                 <div className="form-group">
                   <label htmlFor="phone">Phone Number</label>
                   <input
-                    id="phone" type="tel" placeholder="+44 123 456 7890"
+                    id="phone" type="tel" placeholder="+1 123 456 7890"
                     value={form.phone} onChange={e => setForm({...form, phone: e.target.value})}
                   />
                 </div>

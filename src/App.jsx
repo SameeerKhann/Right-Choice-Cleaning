@@ -27,8 +27,34 @@ function ScrollReveal({ children, delay = 0 }) {
   )
 }
 
+import CareersPage from './components/CareersPage'
+import LoginPage from './components/LoginPage'
+
 export default function App() {
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState('home')
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash
+      if (hash === '#careers') {
+        setCurrentPage('careers')
+        window.scrollTo(0, 0)
+      } else if (hash === '#login') {
+        setCurrentPage('login')
+        window.scrollTo(0, 0)
+      } else {
+        setCurrentPage('home')
+        // We don't scroll to 0 here because if they clicked #services, 
+        // the browser will handle the scrolling natively once the component mounts.
+      }
+    }
+    
+    window.addEventListener('hashchange', handleHashChange)
+    handleHashChange() // Check initial hash
+    
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
 
   return (
     <>
@@ -43,17 +69,27 @@ export default function App() {
           transition={{ duration: 0.5 }}
         >
           <Navbar />
-          <main>
-            <Hero />
-            <ScrollReveal><BookingSection /></ScrollReveal>
-            <ScrollReveal delay={0.05}><ServicesSection /></ScrollReveal>
-            <ScrollReveal delay={0.05}><ServicesChecklist /></ScrollReveal>
-            <ScrollReveal delay={0.05}><WhyChooseUs /></ScrollReveal>
-            <HowItWorks />
-            <ScrollReveal delay={0.05}><TestimonialsSection /></ScrollReveal>
-            <ScrollReveal delay={0.05}><ServiceAreas /></ScrollReveal>
-            <ContactSection />
-          </main>
+          {currentPage === 'home' ? (
+            <main>
+              <Hero />
+              <ScrollReveal><BookingSection /></ScrollReveal>
+              <ScrollReveal delay={0.05}><ServicesSection /></ScrollReveal>
+              <ScrollReveal delay={0.05}><ServicesChecklist /></ScrollReveal>
+              <ScrollReveal delay={0.05}><WhyChooseUs /></ScrollReveal>
+              <HowItWorks />
+              <ScrollReveal delay={0.05}><TestimonialsSection /></ScrollReveal>
+              <ScrollReveal delay={0.05}><ServiceAreas /></ScrollReveal>
+              <ContactSection />
+            </main>
+          ) : currentPage === 'careers' ? (
+            <main>
+              <CareersPage />
+            </main>
+          ) : (
+            <main>
+              <LoginPage />
+            </main>
+          )}
           <Footer />
         </motion.div>
       )}

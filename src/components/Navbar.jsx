@@ -10,6 +10,9 @@ const navLinks = [
   { label: 'Reviews', href: '#reviews' },
   { label: 'Areas', href: '#service-areas' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Careers', href: '#careers' },
+  // ⚠️ REPLACE '#login' with your Booking Koala Login URL later
+  { label: 'Login / Sign Up', href: '#login' },
 ]
 
 export default function Navbar() {

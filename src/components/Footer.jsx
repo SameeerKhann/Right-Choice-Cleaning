@@ -1,5 +1,6 @@
+import { useState } from 'react'
+import LegalModal from './LegalModal'
 import './Footer.css'
-
 const footerLinks = {
   Services: [
     { label: 'Residential Cleaning', href: '#services' },
@@ -14,13 +15,20 @@ const footerLinks = {
     { label: 'Service Areas', href: '#service-areas' },
   ],
   Legal: [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms & Conditions', href: '#' },
+    { label: 'Privacy Policy', href: '#', type: 'privacy' },
+    { label: 'Terms & Conditions', href: '#', type: 'terms' },
     { label: 'Cookie Policy', href: '#' },
   ],
 }
 
 export default function Footer() {
+  const [modalState, setModalState] = useState({ isOpen: false, type: null })
+
+  const openModal = (e, type) => {
+    e.preventDefault()
+    setModalState({ isOpen: true, type })
+  }
+
   return (
     <footer className="footer">
       <div className="container">
@@ -64,7 +72,10 @@ export default function Footer() {
               <ul>
                 {links.map(link => (
                   <li key={link.label}>
-                    <a href={link.href}>
+                    <a 
+                      href={link.href}
+                      onClick={link.type ? (e) => openModal(e, link.type) : undefined}
+                    >
                       <i className="fa-solid fa-chevron-right"></i>
                       {link.label}
                     </a>
@@ -107,12 +118,17 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Right Choice Cleaning — All Rights Reserved</p>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
+            <a href="#" onClick={(e) => openModal(e, 'privacy')}>Privacy Policy</a>
+            <a href="#" onClick={(e) => openModal(e, 'terms')}>Terms & Conditions</a>
             <a href="#">Cookie Policy</a>
           </div>
         </div>
       </div>
+      <LegalModal 
+        isOpen={modalState.isOpen} 
+        type={modalState.type} 
+        onClose={() => setModalState({ ...modalState, isOpen: false })} 
+      />
     </footer>
   )
 }
