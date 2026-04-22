@@ -26,7 +26,7 @@ export default function Hero() {
         autoPlay loop muted playsInline
         poster="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
       >
-        <source src="https://somervilles.s3-assets.com/Somerville-Hero-Homepage.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}hero-background.mp4`} type="video/mp4" />
       </video>
 
       {/* Gradient overlays */}
